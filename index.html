@@ -1,10 +1,258 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <title>我的网站</title>
-  </head>
-  <body>
-      <h1>欢迎来到我的网站！</h1>
-      <p>这是 GitHub Pages 托管的网站</p>
-  </body>
-  </html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaoHenry87 - 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 60px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .bio {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* 社交链接 */
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* 内容板块 */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 技能标签 */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        /* 项目卡片 */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部信息 -->
+        <header class="header">
+            <div class="avatar">👨‍💻</div>
+            <h1>MaoHenry87</h1>
+            <p class="subtitle">开发者 / 技术爱好者</p>
+            <p class="bio">
+                热爱编程与开源，喜欢探索新技术。在这里分享我的项目、学习笔记和技术心得。
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/maohenry87" title="GitHub">🐙</a>
+                <a href="mailto:your.email@example.com" title="邮箱">📧</a>
+            </div>
+        </header>
+
+        <!-- 技能板块 -->
+        <section class="section">
+            <h2>💡 技术栈</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Android</span>
+            </div>
+        </section>
+
+        <!-- 项目板块 -->
+        <section class="section">
+            <h2>🚀 我的项目</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>项目一</h3>
+                    <p>这是一个示例项目描述，你可以在这里介绍你的项目。</p>
+                    <a href="https://github.com/maohenry87">查看详情 →</a>
+                </div>
+                <div class="project-card">
+                    <h3>项目二</h3>
+                    <p>这是另一个示例项目，点击上方链接查看你的 GitHub。</p>
+                    <a href="https://github.com/maohenry87">查看详情 →</a>
+                </div>
+                <div class="project-card">
+                    <h3>更多项目</h3>
+                    <p>访问我的 GitHub 主页查看更多开源项目。</p>
+                    <a href="https://github.com/maohenry87">访问 GitHub →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于我 -->
+        <section class="section">
+            <h2>👋 关于我</h2>
+            <p>
+                你好！我是 MaoHenry87，一名热爱技术的开发者。我喜欢学习新知识，参与开源项目，
+                并与社区分享经验。如果你对我的项目感兴趣，欢迎通过邮箱或 GitHub 联系我！
+            </p>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 MaoHenry87. Made with ❤️ using GitHub Pages</p>
+        </footer>
+    </div>
+</body>
+</html>
