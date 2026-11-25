@@ -107,12 +107,16 @@
     html[data-theme="light"] .hero-pill-mainland:hover { background-color: rgba(239,68,68,0.14) !important; border-color: rgba(239,68,68,0.5) !important; }
     html[data-theme="light"] .hero-pill-overseas { color: #1d4ed8 !important; background-color: rgba(59,130,246,0.08) !important; border-color: rgba(59,130,246,0.3) !important; }
     html[data-theme="light"] .hero-pill-overseas:hover { background-color: rgba(59,130,246,0.14) !important; border-color: rgba(59,130,246,0.5) !important; }
+    html[data-theme="light"] .hero-pill-usbank { color: #1d4ed8 !important; background-color: rgba(59,130,246,0.08) !important; border-color: rgba(59,130,246,0.3) !important; }
+    html[data-theme="light"] .hero-pill-usbank:hover { background-color: rgba(59,130,246,0.14) !important; border-color: rgba(59,130,246,0.5) !important; }
     html[data-theme="light"] .hero-pill-bank { color: #059669 !important; background-color: rgba(16,185,129,0.08) !important; border-color: rgba(16,185,129,0.3) !important; }
     html[data-theme="light"] .hero-pill-bank:hover { background-color: rgba(16,185,129,0.14) !important; border-color: rgba(16,185,129,0.5) !important; }
     html[data-theme="light"] .hero-pill-vpn { color: #7c3aed !important; background-color: rgba(139,92,246,0.08) !important; border-color: rgba(139,92,246,0.3) !important; }
     html[data-theme="light"] .hero-pill-vpn:hover { background-color: rgba(139,92,246,0.14) !important; border-color: rgba(139,92,246,0.5) !important; }
     html[data-theme="light"] .hero-pill-crypto { color: #d97706 !important; background-color: rgba(245,158,11,0.08) !important; border-color: rgba(245,158,11,0.3) !important; }
     html[data-theme="light"] .hero-pill-crypto:hover { background-color: rgba(245,158,11,0.14) !important; border-color: rgba(245,158,11,0.5) !important; }
+    html[data-theme="light"] .hero-pill-sim { color: #db2777 !important; background-color: rgba(236,72,153,0.08) !important; border-color: rgba(236,72,153,0.3) !important; }
+    html[data-theme="light"] .hero-pill-sim:hover { background-color: rgba(236,72,153,0.14) !important; border-color: rgba(236,72,153,0.5) !important; }
 
     /* 卡片：浅色模式 */
     html[data-theme="light"] #list-view .bg-gray-900,
@@ -305,6 +309,11 @@
       border-color: rgba(100,150,240,0.12) !important;
       box-shadow: 0 16px 40px rgba(100,150,240,0.06) !important;
     }
+    html[data-theme="light"] #usbank.section-card:hover {
+      background: rgba(100,150,240,0.06) !important;
+      border-color: rgba(100,150,240,0.12) !important;
+      box-shadow: 0 16px 40px rgba(100,150,240,0.06) !important;
+    }
     html[data-theme="light"] #bank.section-card:hover {
       background: rgba(60,200,150,0.06) !important;
       border-color: rgba(60,200,150,0.12) !important;
@@ -314,6 +323,11 @@
       background: rgba(160,100,240,0.06) !important;
       border-color: rgba(160,100,240,0.12) !important;
       box-shadow: 0 16px 40px rgba(160,100,240,0.06) !important;
+    }
+    html[data-theme="light"] #sim.section-card:hover {
+      background: rgba(236,72,153,0.06) !important;
+      border-color: rgba(236,72,153,0.12) !important;
+      box-shadow: 0 16px 40px rgba(236,72,153,0.06) !important;
     }
     html[data-theme="light"] #crypto.section-card:hover {
       background: rgba(240,200,60,0.06) !important;
@@ -338,6 +352,10 @@
       background: linear-gradient(90deg, #c4b5fd 0%, #ffffff 70%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
+    .section-title-pink {
+      background: linear-gradient(90deg, #f472b6 0%, #ffffff 70%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
     .section-title-yellow {
       background: linear-gradient(90deg, #fde68a 0%, #ffffff 70%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
@@ -347,6 +365,7 @@
     html[data-theme="light"] .section-title-blue { background: linear-gradient(90deg, #2563eb 0%, #1d1d1f 70%); -webkit-background-clip: text; background-clip: text; }
     html[data-theme="light"] .section-title-green { background: linear-gradient(90deg, #059669 0%, #1d1d1f 70%); -webkit-background-clip: text; background-clip: text; }
     html[data-theme="light"] .section-title-purple { background: linear-gradient(90deg, #7c3aed 0%, #1d1d1f 70%); -webkit-background-clip: text; background-clip: text; }
+    html[data-theme="light"] .section-title-pink { background: linear-gradient(90deg, #db2777 0%, #1d1d1f 70%); -webkit-background-clip: text; background-clip: text; }
     html[data-theme="light"] .section-title-yellow { background: linear-gradient(90deg, #d97706 0%, #1d1d1f 70%); -webkit-background-clip: text; background-clip: text; }
 
     /* ===== Section 滚动出场动画 ===== */
@@ -369,9 +388,9 @@
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="flex items-center gap-2.5">
       <button onclick="showList()" class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-        <img src="images/icon-guide.webp" class="w-8 h-8 rounded-full object-cover" alt="华尔街之米">
+        <img src="images/icon-guide.webp" class="w-8 h-8 rounded-full object-cover" alt="海布里之王">
       </button>
-      <a href="https://discord.gg/fgKBzZmFHa" target="_blank" rel="noopener noreferrer" class="font-bold text-white text-lg tracking-tight hover:opacity-80 transition-opacity">华尔街之米</a>
+      <a href="https://discord.gg/fgKBzZmFHa" target="_blank" rel="noopener noreferrer" class="font-bold text-white text-lg tracking-tight hover:opacity-80 transition-opacity">海布里之王</a>
     </div>
     <div class="flex items-center gap-3">
       <div style="position:relative;">
@@ -403,15 +422,17 @@
         <div class="hero-badge inline-flex items-center gap-2 text-xs font-semibold text-blue-400/80 bg-blue-500/8 border border-blue-400/20 px-3.5 py-1 rounded-full mb-6 tracking-widest uppercase">
           2026 最新版 · 持续更新
         </div>
-        <h1 class="hero-title hero-title-grad text-3xl md:text-5xl font-bold mb-4">A港美股开户 · 港卡办理</h1>
+        <h1 class="hero-title hero-title-grad text-3xl md:text-5xl font-bold mb-4">港美股开户 · 港卡办理</h1>
         <p class="text-gray-400 text-base md:text-lg leading-relaxed">内地 & 海外身份均可开 · 附最新奖励活动</p>
       </div>
       <!-- 横向 pill 导航 -->
       <div class="flex flex-wrap justify-center gap-3 text-sm mb-6">
         <a href="#mainland" class="hero-pill-mainland bg-red-500/15 border border-red-500/35 text-red-300 hover:bg-red-500/25 hover:border-red-400/60 px-5 py-2 rounded-full transition-all font-medium">🪪 内地身份开户</a>
-        <a href="#overseas" class="hero-pill-overseas bg-blue-500/15 border border-blue-500/35 text-blue-300 hover:bg-blue-500/25 hover:border-blue-400/60 px-5 py-2 rounded-full transition-all font-medium">🌏 境外身份开户</a>
         <a href="#bank" class="hero-pill-bank bg-emerald-500/15 border border-emerald-400/35 text-emerald-300 hover:bg-emerald-500/25 hover:border-emerald-400/60 px-5 py-2 rounded-full transition-all font-medium">🏦 香港银行卡</a>
+        <a href="#usbank" class="hero-pill-usbank bg-blue-500/15 border border-blue-500/35 text-blue-300 hover:bg-blue-500/25 hover:border-blue-400/60 px-5 py-2 rounded-full transition-all font-medium">🌏 境外银行卡</a>
         <a href="#vpn" class="hero-pill-vpn bg-purple-500/15 border border-purple-500/35 text-purple-300 hover:bg-purple-500/25 hover:border-purple-400/60 px-5 py-2 rounded-full transition-all font-medium">🚀 VPN 推荐</a>
+        <a href="#sim" class="hero-pill-sim bg-pink-500/15 border border-pink-500/35 text-pink-300 hover:bg-pink-500/25 hover:border-pink-400/60 px-5 py-2 rounded-full transition-all font-medium">📱 境外SIM卡</a>
+        <a href="#overseas" class="hero-pill-overseas bg-blue-500/15 border border-blue-500/35 text-blue-300 hover:bg-blue-500/25 hover:border-blue-400/60 px-5 py-2 rounded-full transition-all font-medium" style="display:none">🌏 境外身份开户</a>
         <a href="#crypto" class="hero-pill-crypto bg-yellow-500/15 border border-yellow-500/35 text-yellow-300 hover:bg-yellow-500/25 hover:border-yellow-400/60 px-5 py-2 rounded-full transition-all font-medium" style="display:none">₿ 加密货币</a>
       </div>
       <!-- 通知面板居中 -->
@@ -452,7 +473,7 @@
           <span style="color:rgba(245,158,11,0.8); font-size:1.25rem;">➜</span>
           <a href="#bank" class="flow-step inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-white transition-all hover:scale-105" style="background:linear-gradient(135deg, rgba(245,158,11,0.5) 0%, rgba(249,115,22,0.35) 100%); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow: 0 4px 16px rgba(245,158,11,0.2), inset 0 1px 0 rgba(255,255,255,0.2);">③ 入金交易</a>
         </div>
-        <p class="text-xs text-gray-500 mt-2">券商和港卡可同步办理 · 不懂随时咨询「华尔街强哥」</p>
+        <p class="text-xs text-gray-500 mt-2">券商和港卡可同步办理 · 不懂随时咨询「毛亨利」</p>
       </div>
     </div>
   </section>
@@ -492,7 +513,8 @@
     </section>
 
     <!-- 海外身份 -->
-    <section id="overseas" class="section-card">
+    <!-- 海外身份（隐藏保留） -->
+    <section id="overseas" class="section-card" style="display:none">
       <div class="mb-4">
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight section-title-blue mb-1">🌏 境外身份开户</h2>
         <p class="text-sm text-gray-500">持有香港/新加坡等境外证件，开港美股证券账户</p>
@@ -515,7 +537,7 @@
         <div class="mb-4">
           <h3 class="text-base font-bold text-emerald-300 tracking-tight mb-1">🏛️ 内地见证办理</h3>
           <p class="text-sm text-gray-400 mb-0.5">在内地网点完成身份见证，无需亲赴香港</p>
-          <p class="text-xs text-gray-500">联系「华尔街强哥」预约内部渠道，低门槛、流程丝滑</p>
+          <p class="text-xs text-gray-500">联系「毛亨利」预约内部渠道，低门槛、流程丝滑</p>
         </div>
         <div class="flex flex-wrap gap-2 mb-5">
           <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300">★ 渣打银行 · 内地见证首选，开户顺畅，功能完整</span>
@@ -549,6 +571,17 @@
       </div>
     </section>
 
+    <!-- 境外银行卡 -->
+    <section id="usbank" class="section-card">
+      <div class="mb-4">
+        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight section-title-blue mb-1">🌏 境外银行卡</h2>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300">💡 不需要海外身份和海外地址</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-usbank"></div>
+    </section>
+
     <!-- VPN 推荐 -->
     <section id="vpn" class="section-card">
       <div class="mb-4">
@@ -556,9 +589,25 @@
         <p class="text-sm text-gray-500">开户和日常交易需要翻墙，选一个稳定的 VPN</p>
       </div>
       <div class="flex flex-wrap gap-2 mb-5">
-        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-purple-500/15 border border-purple-400/30 text-purple-300">★ 飞天猪 · 速度快，节点多，稳定性强</span>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300">★ COCODUCK · 速度快，节点多，适合主用</span>
+        <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-full bg-rose-500/15 border border-rose-400/30 text-black" style="font-weight:800">★ 一枝红杏 · 稳定，性价比高，适合备用</span>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-vpn"></div>
+    </section>
+
+    <!-- 境外SIM卡 -->
+    <section id="sim" class="section-card">
+      <div class="mb-4">
+        <h2 class="text-xl md:text-2xl font-extrabold tracking-tight section-title-pink mb-1">📱 境外SIM卡</h2>
+        <p class="text-sm text-gray-500">银行或境外APP注册使用需要接收短信验证码，选一个稳定SIM卡</p>
+      </div>
+      <div class="flex flex-wrap gap-2 mb-5">
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-pink-500/15 border border-pink-400/30 text-pink-300">★ OneNz · 稳定接收验证码</span>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-400/30 text-orange-300">★ giffgaff · 英国老牌运营商</span>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300">★ hahasim · 香港本地号码</span>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-lime-500/15 border border-lime-400/30 text-lime-600">★ Lucky2 · 高性价比大流量</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-sim"></div>
     </section>
 
     <!-- 加密货币（隐藏） -->
@@ -594,9 +643,9 @@
         <div class="flex flex-col items-center gap-3">
           <img src="images/qr-wechat.webp" class="w-36 h-36 rounded-2xl object-cover" alt="微信二维码" loading="lazy">
           <div class="text-center">
-            <div class="font-semibold text-white">微信 · 华尔街强哥</div>
+            <div class="font-semibold text-white">微信 · 毛亨利</div>
             <div class="bg-gray-800 rounded-xl px-3 py-2 flex items-center gap-2 mt-1">
-              <span id="footer-wechat-id" class="text-sm font-mono text-gray-200">huaerjieqiangge</span>
+              <span id="footer-wechat-id" class="text-sm font-mono text-gray-200">maonani88</span>
               <button id="footer-wechat-copy-btn" onclick="copyFooterWechat()"
                 class="bg-green-500 hover:bg-green-600 text-white text-xs font-medium px-2 py-1 rounded-lg transition-colors">
                 复制
@@ -622,10 +671,10 @@
           <img src="images/icon-x.webp" class="w-36 h-36 rounded-2xl object-cover" alt="X (Twitter)" loading="lazy" style="filter: invert(1)">
           <div class="text-center">
             <div class="font-semibold text-white">X (Twitter)</div>
-            <div class="text-sm text-gray-400 mb-1">@huaerjieqiangge</div>
+            <div class="text-sm text-gray-400 mb-1">@maonani88</div>
             <div class="flex flex-col gap-1">
               <a href="https://x.com/i/chat/group_join/g2062081846226395460/DfKsaGURbm" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">加入群聊 →</a>
-              <a href="https://x.com/huaerjieqiangge?s=21" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">关注主页 →</a>
+              <a href="https://x.com/maonani88?s=21" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:text-blue-300 transition-colors">关注主页 →</a>
             </div>
           </div>
         </div>
@@ -699,7 +748,7 @@
       <div id="d-pros" class="bg-green-900/20 border border-green-800/50 rounded-2xl p-5 space-y-2 text-sm text-gray-300 leading-relaxed"></div>
     </div>
     <div>
-      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">⚠️ 缺点</h3>
+      <h3 id="d-cons-label" class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">⚠️ 缺点</h3>
       <div id="d-cons" class="bg-red-900/20 border border-red-800/50 rounded-2xl p-5 space-y-2 text-sm text-gray-300 leading-relaxed"></div>
     </div>
     <div>
@@ -707,7 +756,7 @@
       <div id="d-conditions" class="bg-gray-900 border border-gray-700 rounded-2xl px-5 py-4 text-sm font-medium text-gray-300"></div>
     </div>
     <div>
-      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📍 见证地点</h3>
+      <h3 id="d-location-label" class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📍 见证地点</h3>
       <div id="d-location" class="bg-gray-900 border border-gray-700 rounded-2xl px-5 py-4 text-sm font-medium text-gray-300"></div>
     </div>
     <div>
@@ -720,17 +769,17 @@
   <div id="d-contact-section" style="display:none;" class="mb-6">
     <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📞 办理方式</h3>
     <div class="bg-gray-900 border border-gray-700 rounded-2xl p-5">
-      <div class="font-semibold text-white mb-1">联系「华尔街强哥」咨询预约</div>
+      <div class="font-semibold text-white mb-1">联系「毛亨利」咨询预约</div>
       <div class="text-sm text-gray-400 mb-4">添加微信发送消息，即可获取最新见证开户资料及预约指引</div>
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <div class="flex flex-col items-center gap-1.5 flex-shrink-0">
           <img src="images/qr-wechat.webp" class="w-32 h-32 rounded-xl object-cover" alt="微信二维码">
-          <div class="text-xs text-gray-400 font-medium">华尔街强哥</div>
+          <div class="text-xs text-gray-400 font-medium">毛亨利</div>
         </div>
         <div class="flex flex-col gap-3 w-full">
           <div class="text-xs text-gray-500">微信号</div>
           <div class="bg-gray-800 rounded-xl px-4 py-3 flex items-center justify-between border border-gray-700">
-            <span id="wechat-id" class="font-mono font-bold text-white tracking-wide">huaerjieqiangge</span>
+            <span id="wechat-id" class="font-mono font-bold text-white tracking-wide">maonani88</span>
             <button onclick="copyWechat(this)" id="wechat-copy-btn"
               class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors">
               复制
@@ -794,17 +843,17 @@
   <div id="d-cert-section" style="display:none;" class="mb-6">
     <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">💬 联系咨询</h3>
     <div class="bg-gray-900 border border-gray-700 rounded-2xl p-5">
-      <div class="font-semibold text-white mb-1">添加「华尔街强哥」获取更多资讯</div>
+      <div class="font-semibold text-white mb-1">添加「毛亨利」获取更多资讯</div>
       <div class="text-sm text-gray-400 mb-4">开户疑问、最新活动、入金指导等，随时咨询</div>
       <div class="flex flex-col sm:flex-row items-center gap-4">
         <div class="flex flex-col items-center gap-1.5 flex-shrink-0">
           <img src="images/qr-wechat.webp" class="w-28 h-28 rounded-xl object-cover" alt="微信二维码">
-          <div class="text-xs text-gray-400 font-medium">华尔街强哥</div>
+          <div class="text-xs text-gray-400 font-medium">毛亨利</div>
         </div>
         <div class="flex flex-col gap-3 w-full">
           <div class="text-xs text-gray-500">微信号</div>
           <div class="bg-gray-800 rounded-xl px-4 py-3 flex items-center justify-between border border-gray-700">
-            <span class="font-mono font-bold text-white tracking-wide">huaerjieqiangge</span>
+            <span class="font-mono font-bold text-white tracking-wide">maonani88</span>
             <button onclick="copyWechat(this)"
               class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors">
               复制
@@ -879,7 +928,7 @@ const brokers = [
   },
   {
     id: 'baoshi',
-    group: 'mainland',
+    group: 'mainland-hidden',
     name: '宝时证券',
     tag: '0佣金0平台费',
     icon: 'images/icon-baoshi.webp',
@@ -1192,7 +1241,7 @@ const brokers = [
   },
   {
     id: 'yingli-hk',
-    group: 'hk-broker',
+    group: 'mainland',
     name: '盈立证券（香港）',
     tag: '香港持牌 · 周大福背景 · 内地身份可开',
     icon: 'images/icon-yinglihk.webp',
@@ -1265,45 +1314,67 @@ const banks = [
     id: 'hangseng',
     category: 'witness',
     name: '恒生银行',
-    tag: 'Hang Seng Bank · 一拖三 · 仅一线城市',
+    tag: 'Hang Seng Bank · 一拖三 · Global Money+',
     icon: 'images/icon-hangseng.webp',
     iconBg: 'bg-green-50',
     iconColor: 'text-green-700',
     btnColor: 'bg-green-700 hover:bg-green-800',
     pros: [
-      '只需中农工建交、招行等 6 家银行 App 显示 50 万存款即可，无需真实转入',
-      '高级账户全球汇款免费，6 个月后可降级，免管理费',
-      '存 50 万可全家办理（一拖三），方便全家换汇',
+      '✦ Global Money向全球50多个国家转账免手续费，非常适合跨境转账，留学等。\n尝试过免费转账的渠道：转美元到美国银行（嘉信/华美）/ 转英镑到英国IFAST银行 / 转欧元到欧洲IBAN（WISE）',
+      '💳 万事达多币种扣账卡，有资金返现活动，购买火车票地铁等有85折的优惠活动。\n通过跨境支付通转人民币到港卡，境内消费扣人民币，无汇损。',
+      '👨‍👩‍👧‍👦 可开立家庭账户，一人存50万，可全家办理港卡（一拖三），方便全家换汇',
+      '📈 恒生中国内地账户，可以通过境外代客理财投资标普500等场外QDII产品。\n额度高，合规性好，无境外投资20%税。',
+      '🏆 高级账户全球汇款免费，6个月后可申请降级，优越理财降级为优进理财账户。\n降级后不收管理费，且港卡的Global Money、万事达多币种扣账卡不受影响。',
     ],
-    cons: [
-      '与汇丰同属汇丰集团，相对容易关户',
-      '仅限北京、上海等一线城市见证开户',
-    ],
-    conditions: '港澳通行证或护照 · 约 500 元见证费 · 6 家银行 App 显示 50 万存款',
-    location: '仅限北京、上海等一线城市（10 人可上门团办）',
+    conditions: '港澳通行证或护照 · 约500元见证费 · 50万存3个月',
+    location: '上海、北京、天津、杭州、福州、广州、深圳、佛山、东莞',
     time: '约 2-3 周',
   },
+  // 南洋商业银行 - 已隐藏
+  // {
+  //   id: 'ncb',
+  //   category: 'witness',
+  //   name: '南洋商业银行',
+  //   tag: 'NCB · 低门槛 · 下卡快 · 仅北京',
+  //   icon: 'images/icon-ncb.webp',
+  //   iconBg: 'bg-amber-50',
+  //   iconColor: 'text-amber-600',
+  //   btnColor: 'bg-amber-500 hover:bg-amber-600',
+  //   pros: [
+  //     '存 10 万锁 6 个月，门槛低（无需 50 万）',
+  //     '普通账户，无管理费，下卡速度极快（1-2 个工作日）',
+  //     '6 人可上门团办，方便组团',
+  //   ],
+  //   cons: [
+  //     '跨境汇款费用较高（建议用兴业寰宇人生等渠道汇款）',
+  //     '仅限北京办理，外地需出差前往',
+  //   ],
+  //   conditions: '护照 + 90 天以上签证（如尼泊尔签证）· 约 500 元见证费 · 存 10 万',
+  //   location: '仅限北京（可出差办理，6 人可上门团办）',
+  //   time: '约 1-2 个工作日（下卡极快）',
+  // },
   {
-    id: 'ncb',
+    id: 'dbs',
     category: 'witness',
-    name: '南洋商业银行',
-    tag: 'NCB · 低门槛 · 下卡快 · 仅北京',
-    icon: 'images/icon-ncb.webp',
-    iconBg: 'bg-amber-50',
-    iconColor: 'text-amber-600',
-    btnColor: 'bg-amber-500 hover:bg-amber-600',
+    name: '星展银行',
+    tag: 'DBS · 新加坡最大银行 · 高净值人士',
+    icon: 'images/icon-xingzhan.webp',
+    iconBg: 'bg-gray-800',
+    iconColor: 'text-white',
+    btnColor: 'bg-gray-900 hover:bg-black',
     pros: [
-      '存 10 万锁 6 个月，门槛低（无需 50 万）',
-      '普通账户，无管理费，下卡速度极快（1-2 个工作日）',
-      '6 人可上门团办，方便组团',
+      '新加坡最大银行，亚洲领先的金融集团',
+      '可同时开通香港和新加坡账户，资金调拨灵活',
+      '全球汇款网络覆盖广，转账便捷',
+      '可在国内购买FCN/ELI等产品，进行美股投资',
     ],
     cons: [
-      '跨境汇款费用较高（建议用兴业寰宇人生等渠道汇款）',
-      '仅限北京办理，外地需出差前往',
+      '资金门槛高，需存入100万并锁定6个月，无法通过降级免管理费',
+      '见证网点相对较少',
     ],
-    conditions: '护照 + 90 天以上签证（如尼泊尔签证）· 约 500 元见证费 · 存 10 万',
-    location: '仅限北京（可出差办理，6 人可上门团办）',
-    time: '约 1-2 个工作日（下卡极快）',
+    conditions: '身份证 + 港澳通行证或护照 · 约 500 元见证费 · 存 30 万 6 个月',
+    location: '北京、上海、广州、深圳等主要城市',
+    time: '约 2-4 周',
   },
   {
     id: 'bea',
@@ -1315,23 +1386,24 @@ const banks = [
     iconColor: 'text-orange-600',
     btnColor: 'bg-orange-500 hover:bg-orange-600',
     pros: [
-      '存 10 万锁 3 个月，办理高级账户',
+      '存 50 万锁 3 个月，办理高级账户',
       '东亚中国存款利率较高',
       '港卡可办理信用卡，享受更多港卡羊毛',
+      '高级账户有2年免费期，2年后可继续申请',
     ],
     cons: [
       '跨境汇款费用较高（建议用兴业寰宇人生等渠道汇款）',
-      '仅限北京办理，开户周期约 1-2 个月',
+      '降级只能到香港分行',
     ],
-    conditions: '护照 + 90 天以上签证（如尼泊尔签证）· 存 10 万',
-    location: '仅限北京（可出差办理，6 人可上门团办）',
+    conditions: '护照 + 50万存3个月',
+    location: '北京，上海一线城市',
     time: '约 1-2 个月',
   },
   {
     id: 'hsbc',
     category: 'witness',
     name: '汇丰银行',
-    tag: 'HSBC · 香港发钞行 · 武汉唯一可选',
+    tag: 'HSBC · 香港发钞行 · 一地卓越全球卓越',
     icon: 'images/icon-hsbc.webp',
     iconBg: 'bg-red-50',
     iconColor: 'text-red-600',
@@ -1339,13 +1411,15 @@ const banks = [
     link: 'https://www.services.cn-banking.hsbc.com.cn/PublicContent/wechat/rbwm_wechat_banking/index.html#/emgm/emgmShare?refNumber=WVFZNzA2ODc%3D&channel=MOBILE&a=0.49702502955347394&shareType=2&tsl=175475783135',
     pros: [
       '香港发钞行，全球知名品牌',
-      '武汉等无其他港卡网点地区的唯一选择',
+      '一地卓越全球卓越',
       '有条件者推荐直接赴港办理，更快更方便',
+      '可办理汇丰美国',
+      '可办理pulse信用卡',
     ],
     cons: [
-      '需存 50 万，与恒生同属汇丰集团，相对容易关户',
+      '降级汇丰One，需保持港卡账户内月日均1万港币，才可以免管理费',
     ],
-    conditions: '身份证 + 港澳通行证 · 需存 50 万',
+    conditions: '身份证 + 港澳通行证 · 需存 50 万3个月',
     location: '北京、上海、广州等一线城市（武汉地区仅能办汇丰）',
     time: '约 5 个工作日',
   },
@@ -1448,6 +1522,35 @@ const banks = [
       'https://mp.weixin.qq.com/s?__biz=Mzk3NTI3MjU1NA==&mid=2247483717&idx=1&sn=a91b2947f10accd1f4f8671c26afc70d&scene=21#wechat_redirect',
     ],
   },
+
+  // ---------- 境外银行卡 ----------
+  {
+    id: 'huamei',
+    category: 'usbank',
+    name: '华美银行 美国',
+    tag: '最适合国人的美国银行 · 视频见证',
+    icon: 'images/huamei.webp',
+    iconBg: 'bg-red-50',
+    iconColor: 'text-red-600',
+    btnColor: 'bg-red-600 hover:bg-red-700',
+    link: 'https://ibkr.com/referral/zhongqiang110',
+    desc: '华美银行是一家面向华人的美国银行，提供中文服务，开户简单，维护成本低，适合国人进行美股投资和跨境收付款。',
+    pros: [
+      '全美前30大银行、美国南加州最大商业银行',
+      '相当于亲赴美国华美办理的本土支票账户',
+      '美国本土Checking账户可申领实体Visa卡',
+      '支持ACH快速出入金、Zelle等转账方式',
+      '享有25万美元联邦存款保险FDIC保障',
+      '非Velo账户、非iTalkBB联名卡账户',
+      '可申请VISA借记卡，在国内免费取现，用于出金',
+    ],
+    cons: [
+      '💵 美元电汇入金每笔手续费10刀',
+    ],
+    conditions: '1. 护照照片、身份证照片（视频面签时需原件）\n2. 地址证明（身份证、银行账单、信用卡账单、水电账单、驾照等，其中一种即可）\n3. 资产证明（存款证明、基金持仓、券商月结单等）：限时可免资产证明，免费升级VIP渠道；',
+    location: '• 提交资料预审 → 支付办理费 → 银行经理审核\n→ 预约视频面签 → 银行终审下户 → 入金激活\n• 视频开户地点不限',
+    time: '约 2-3 周',
+  },
 ];
 
 // ============================================================
@@ -1527,27 +1630,81 @@ function renderCard(item, isBank = false) {
 const vpns = [
   {
     id: 'feitianzhu',
-    name: '飞天猪',
+    name: 'COCODUCK',
     tag: '速度快 · 节点多 · 推荐',
-    icon: 'images/icon-feitianzhu.webp',
-    iconBg: 'bg-purple-50',
-    iconColor: 'text-purple-600',
-    btnColor: 'bg-purple-600 hover:bg-purple-700',
-    link: 'https://applite.fliggyvipaff.com/#/register?code=RSDty3nb',
-    price: '20 元/月（详情见官网）',
-    perks: ['速度很快', '节点多'],
+    icon: 'images/icon-cocoduck.webp',
+    iconBg: 'bg-amber-50',
+    iconColor: 'text-amber-600',
+    btnColor: 'bg-amber-500 hover:bg-amber-600',
+    link: 'https://www.cocoduck.site/auth/register?code=87c6dcab5b',
+    price: '推荐：17元/每月，100G流量，不限设备，年付83折',
+    perks: ['速度很快', '节点多', '注册后可免费试用一天', '最低档：77包年，每月40G流量，不限设备'],
   },
   {
     id: 'longmao',
-    name: '龙猫云',
-    tag: '速度快 · 节点多 · 性价比高',
-    icon: 'images/icon-longmao.webp',
-    iconBg: 'bg-indigo-50',
-    iconColor: 'text-indigo-600',
-    btnColor: 'bg-indigo-600 hover:bg-indigo-700',
-    link: 'https://inv06.lmaff01.cc/register?aff=XluVXcXn',
-    price: '15 元/月（详情见官网）',
-    perks: ['速度快', '节点多'],
+    name: '一枝红杏',
+    tag: '稳定 · 节点多 · 性价比高',
+    icon: 'images/icon-hongxingyun.webp',
+    iconBg: 'bg-rose-50',
+    iconColor: 'text-rose-600',
+    btnColor: 'bg-rose-500 hover:bg-rose-600',
+    link: 'https://order.yizhihongxing.org/aff.php?aff=23727',
+    price: '8.25元/每月，100G流量，限5台设备',
+    perks: ['2015年成立老机场', '节点多', '每年双十一优惠：一年期7折'],
+  },
+];
+
+// ============================================================
+// SIM卡数据
+// ============================================================
+const sims = [
+  {
+    id: 'sim1',
+    name: '新西兰OneNz',
+    tag: '稳定接收 · 全球漫游',
+    icon: 'images/icon-onenz.webp',
+    iconBg: 'bg-emerald-900',
+    iconColor: 'text-emerald-100',
+    btnColor: 'bg-emerald-800 hover:bg-emerald-900',
+    link: 'https://87.simpanda.cc/products/onenz',
+    price: '价格咨询客服',
+    perks: ['稳定接收验证码', '全球漫游', '即插即用'],
+  },
+  {
+    id: 'giffgaff',
+    name: 'giffgaff',
+    tag: '英国老牌 · 欧洲漫游',
+    icon: 'images/icon-giffgaff.webp',
+    iconBg: 'bg-gray-800',
+    iconColor: 'text-white',
+    btnColor: 'bg-gray-900 hover:bg-black',
+    link: 'https://87.simpanda.cc/products/Giffgaff',
+    price: '价格咨询客服',
+    perks: ['英国本土运营商', '欧洲多国漫游', '免费领取'],
+  },
+  {
+    id: 'hahasim',
+    name: 'hahasim',
+    tag: '香港卡 · 内地可用',
+    icon: 'images/icon-hahahsim.webp',
+    iconBg: 'bg-cyan-50',
+    iconColor: 'text-cyan-600',
+    btnColor: 'bg-cyan-500 hover:bg-cyan-600',
+    link: 'https://87.simpanda.cc/products/HahaSim',
+    price: '价格咨询客服',
+    perks: ['香港本地号码', '内地可收短信', '注册港美股'],
+  },
+  {
+    id: 'lucky2',
+    name: 'Lucky2',
+    tag: '性价比 · 流量多',
+    icon: 'images/icon-lucky2.webp',
+    iconBg: 'bg-lime-50',
+    iconColor: 'text-lime-600',
+    btnColor: 'bg-lime-500 hover:bg-lime-600',
+    link: 'https://87.simpanda.cc/products/Lucky2Sim80',
+    price: '价格咨询客服',
+    perks: ['高性价比套餐', '大流量包', '长期有效'],
   },
 ];
 
@@ -1613,8 +1770,12 @@ document.getElementById('grid-bank-online').innerHTML =
   banks.filter(b => b.category === 'online').map(b => renderCard(b, true)).join('');
 document.getElementById('grid-bank-hk').innerHTML =
   banks.filter(b => b.category === 'hk').map(b => renderCard(b, true)).join('');
+document.getElementById('grid-usbank').innerHTML =
+  banks.filter(b => b.category === 'usbank').map(b => renderCard(b, true)).join('');
 document.getElementById('grid-vpn').innerHTML =
   vpns.map(v => renderCard(v)).join('');
+document.getElementById('grid-sim').innerHTML =
+  sims.map(s => renderCard(s)).join('');
 document.getElementById('grid-crypto').innerHTML =
   cryptos.map(c => renderCard(c)).join('');
 
@@ -1639,6 +1800,8 @@ function showDetail(id, isBank) {
   if (vpnItem) { showVpnDetail(vpnItem); return; }
   const cryptoItem = cryptos.find(c => c.id === id);
   if (cryptoItem) { showCryptoDetail(cryptoItem); return; }
+  const simItem = sims.find(s => s.id === id);
+  if (simItem) { showSimDetail(simItem); return; }
   const item = isBank ? banks.find(b => b.id === id) : brokers.find(b => b.id === id);
   if (!item) return;
 
@@ -1709,22 +1872,34 @@ function showDetail(id, isBank) {
 
   // 内地见证银行：优缺点 / 条件 / 位置 / 时间
   const bankInfoEl = document.getElementById('d-bank-info');
-  if (isBank && item.category === 'witness' && item.pros) {
+  if (isBank && (item.category === 'witness' || item.category === 'usbank') && item.pros) {
     bankInfoEl.style.display = 'block';
     document.getElementById('d-pros').innerHTML =
       item.pros.map(p => `<div class="flex gap-2"><span class="text-green-500 flex-shrink-0">•</span><span>${p}</span></div>`).join('');
-    document.getElementById('d-cons').innerHTML =
-      item.cons.map(c => `<div class="flex gap-2"><span class="text-red-400 flex-shrink-0">•</span><span>${c}</span></div>`).join('');
-    document.getElementById('d-conditions').textContent = item.conditions || '—';
-    document.getElementById('d-location').textContent = item.location || '—';
-    document.getElementById('d-time').textContent = item.time || '—';
+    // 华美银行显示团办渠道
+    if (item.id === 'huamei') {
+      document.getElementById('d-cons-label').textContent = '🔥 团办渠道';
+      document.getElementById('d-cons').innerHTML = `<div class="text-black font-bold mb-2">🔥华美银行Henry哥特价团办🔥</div><div class="mb-2">境外银行开户政策变动较快，请合理规划办理时机，且办且珍惜</div><div>• Value Checking(标准账户)：管理费12刀/月，1500刀日均余额豁免；</div><div>• Premier Checking(高级账户)：管理费20刀/月，2500刀日均余额豁免；</div>`;
+      document.getElementById('d-cons').className = 'bg-red-50 border border-red-200 rounded-2xl p-5 space-y-2 text-sm text-gray-800 leading-relaxed';
+    } else {
+      document.getElementById('d-cons-label').textContent = '⚠️ 缺点';
+      document.getElementById('d-cons').innerHTML =
+        (item.cons && item.cons.length > 0)
+          ? item.cons.map(c => `<div class="flex gap-2"><span class="text-red-400 flex-shrink-0">•</span><span>${c}</span></div>`).join('')
+          : '<div class="text-gray-500 italic">暂无明显缺点</div>';
+      document.getElementById('d-cons').className = 'bg-red-900/20 border border-red-800/50 rounded-2xl p-5 space-y-2 text-sm text-gray-300 leading-relaxed';
+    }
+    document.getElementById('d-conditions').innerHTML = (item.conditions || '—').replace(/\n/g, '<br>');
+    document.getElementById('d-location').innerHTML = (item.location || '—').replace(/\n/g, '<br>');
+    document.getElementById('d-location-label').textContent = item.id === 'huamei' ? '📋 开户流程' : '📍 见证地点';
+    document.getElementById('d-time').innerHTML = (item.time || '—').replace(/\n/g, '<br>');
   } else {
     bankInfoEl.style.display = 'none';
   }
 
   // 内地见证银行：预约联系
   document.getElementById('d-contact-section').style.display =
-    (isBank && item.category === 'witness') ? 'block' : 'none';
+    (isBank && (item.category === 'witness' || item.category === 'usbank')) ? 'block' : 'none';
 
   // 赴港银行：简介 + 公众号教程 + 文章链接按钮
   const pubaccountSection = document.getElementById('d-pubaccount-section');
@@ -1759,7 +1934,7 @@ function showDetail(id, isBank) {
 
   // 开户流程：券商 + 线上银行显示，赴港银行和见证银行隐藏
   const tutorialSection = document.getElementById('d-tutorial-section');
-  if ((isBank && (item.category === 'witness' || item.category === 'hk')) || !item.tutorial) {
+  if ((isBank && (item.category === 'witness' || item.category === 'hk' || item.category === 'usbank')) || !item.tutorial) {
     tutorialSection.style.display = 'none';
   } else {
     tutorialSection.style.display = 'block';
@@ -1829,9 +2004,10 @@ function showDetail(id, isBank) {
   }
 
   // 按钮：券商 + 线上银行显示，赴港/见证银行（无 link）隐藏
+  // 华美银行不显示立即开户按钮
   const linkEl = document.getElementById('d-link');
   const linkTopEl = document.getElementById('d-link-top');
-  if (item.link) {
+  if (item.link && item.id !== 'huamei') {
     const btnText = (isBank && item.category === 'online') ? '立即申请 →' : '立即开户 →';
     const btnClass = `block text-center text-white font-bold py-4 rounded-2xl text-base transition-colors ${item.btnColor}`;
     linkEl.href = item.link;
@@ -1888,7 +2064,7 @@ function showVpnDetail(item) {
   const perksEl = document.getElementById('d-perks');
   perksSection.style.display = 'block';
   const allPerks = [...item.perks, item.price];
-  perksEl.innerHTML = `<div class="w-full rounded-xl px-3 py-2 mb-1 bg-blue-500/15 border border-blue-400/30"><span class="font-bold text-blue-300 text-sm">🌐 访问网站需要开 VPN，可以尝试公司网络或者 VPN 打开</span></div>` +
+  perksEl.innerHTML = `<div class="w-full rounded-xl px-3 py-2 mb-1 bg-blue-500/15 border border-blue-400/30"><span class="font-bold text-blue-300 text-sm">🌐 访问网站不需要开 VPN，国内网络可访问</span></div>` +
     allPerks.map(p =>
     `<span class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-xl">✅ ${p}</span>`
   ).join('');
@@ -1899,6 +2075,53 @@ function showVpnDetail(item) {
   linkEl.href = item.link;
   linkEl.className = `block text-center text-white font-bold py-4 rounded-2xl text-base transition-colors mb-4 ${item.btnColor}`;
   linkEl.textContent = '立即注册 →';
+  linkEl.style.display = 'block';
+
+  window._listScrollY = window.scrollY;
+  document.getElementById('list-view').style.display = 'none';
+  const detailEl = document.getElementById('detail-view');
+  detailEl.style.display = 'block';
+  detailEl.classList.remove('page-enter');
+  void detailEl.offsetWidth;
+  detailEl.classList.add('page-enter');
+  window.location.hash = item.id;
+  window.scrollTo(0, 0);
+}
+
+function showSimDetail(item) {
+  const iconEl = document.getElementById('d-icon');
+  iconEl.innerHTML = `<img src="${item.icon}" class="w-full h-full object-cover rounded-2xl">`;
+  iconEl.className = 'w-14 h-14 rounded-2xl flex-shrink-0 overflow-hidden';
+  document.getElementById('d-name').textContent = item.name;
+  document.getElementById('d-tag').textContent = item.tag;
+
+  document.getElementById('d-status-section').style.display = 'none';
+  document.getElementById('d-cert-section').style.display = 'none';
+  document.getElementById('d-poster-section').style.display = 'none';
+  document.getElementById('d-code-section').style.display = 'none';
+  document.getElementById('d-bank-info').style.display = 'none';
+  document.getElementById('d-contact-section').style.display = 'none';
+  document.getElementById('d-pubaccount-section').style.display = 'none';
+  document.getElementById('d-download-section').style.display = 'none';
+  document.getElementById('d-guide-section').style.display = 'none';
+  document.getElementById('d-income-section').style.display = 'none';
+  document.getElementById('d-telegram-section').style.display = 'none';
+  document.getElementById('d-link-top').style.display = 'none';
+
+  const perksSection = document.getElementById('d-perks-section');
+  const perksEl = document.getElementById('d-perks');
+  perksSection.style.display = 'block';
+  const allPerks = [...item.perks, item.price];
+  perksEl.innerHTML = allPerks.map(p =>
+    `<span class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-xl">✅ ${p}</span>`
+  ).join('');
+
+  document.getElementById('d-tutorial-section').style.display = 'none';
+
+  const linkEl = document.getElementById('d-link');
+  linkEl.href = item.link;
+  linkEl.className = `block text-center text-white font-bold py-4 rounded-2xl text-base transition-colors mb-4 ${item.btnColor}`;
+  linkEl.textContent = '立即办理 →';
   linkEl.style.display = 'block';
 
   window._listScrollY = window.scrollY;
@@ -2058,10 +2281,12 @@ window.addEventListener('load', () => {
     const bank = banks.find(b => b.id === hash);
     const vpn = vpns.find(v => v.id === hash);
     const crypto = cryptos.find(c => c.id === hash);
+    const sim = sims.find(s => s.id === hash);
     if (broker) showDetail(hash, false);
     else if (bank) showDetail(hash, true);
     else if (vpn) showVpnDetail(vpn);
     else if (crypto) showCryptoDetail(crypto);
+    else if (sim) showSimDetail(sim);
   }
 });
 
