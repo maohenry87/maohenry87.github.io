@@ -601,13 +601,27 @@
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight section-title-pink mb-1">📱 境外SIM卡</h2>
         <p class="text-sm text-gray-500">银行或境外APP注册使用需要接收短信验证码，选一个稳定SIM卡</p>
       </div>
-      <div class="flex flex-wrap gap-2 mb-5">
-        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-pink-500/15 border border-pink-400/30 text-pink-300">★ OneNz · 稳定接收验证码</span>
-        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-400/30 text-orange-300">★ giffgaff · 英国老牌运营商</span>
-        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300">★ hahasim · 香港本地号码</span>
-        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-lime-500/15 border border-lime-400/30 text-lime-600">★ Lucky2 · 高性价比大流量</span>
+
+      <!-- 接码卡 -->
+      <div class="mb-6">
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🔑 接码卡</h3>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-pink-500/15 border border-pink-400/30 text-pink-300">★ OneNz · 稳定接收验证码</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300">★ hahasim · 香港本地号码</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-orange-500/15 border border-orange-400/30 text-orange-300">★ giffgaff · 英国老牌运营商</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-sim-verify"></div>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-sim"></div>
+
+      <!-- 境外流量卡 -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📶 境外流量卡</h3>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-lime-500/15 border border-lime-400/30 text-lime-600">★ Lucky2 40G · 用完不限量</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-yellow-500/15 border border-yellow-400/30 text-yellow-600">★ Lucky2 80G · 超大流量</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5" id="grid-sim-data"></div>
+      </div>
     </section>
 
     <!-- 加密货币（隐藏） -->
@@ -716,6 +730,12 @@
   <div id="d-perks-section" style="display:none;" class="mb-6">
     <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">✅ 开户优点</h3>
     <div id="d-perks" class="flex flex-col gap-2"></div>
+  </div>
+
+  <!-- SIM卡缺点（如有） -->
+  <div id="d-sim-cons" style="display:none;" class="mb-6">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">⚠️ 注意事项</h3>
+    <div id="d-sim-cons-content" class="bg-blue-50 border border-blue-200 rounded-2xl p-5 text-sm text-gray-800 leading-relaxed"></div>
   </div>
 
   <!-- 本月奖励海报（仅券商） -->
@@ -1713,9 +1733,9 @@ const vpns = [
 ];
 
 // ============================================================
-// SIM卡数据
+// SIM卡数据 - 接码卡（接收验证码）
 // ============================================================
-const sims = [
+const simsVerify = [
   {
     id: 'sim1',
     name: '新西兰OneNz',
@@ -1725,20 +1745,8 @@ const sims = [
     iconColor: 'text-emerald-100',
     btnColor: 'bg-emerald-800 hover:bg-emerald-900',
     link: 'https://87.simpanda.cc/products/onenz',
-    price: '价格咨询客服',
-    perks: ['稳定接收验证码', '全球漫游', '即插即用'],
-  },
-  {
-    id: 'giffgaff',
-    name: 'giffgaff',
-    tag: '英国老牌 · 欧洲漫游',
-    icon: 'images/icon-giffgaff.webp',
-    iconBg: 'bg-gray-800',
-    iconColor: 'text-white',
-    btnColor: 'bg-gray-900 hover:bg-black',
-    link: 'https://87.simpanda.cc/products/Giffgaff',
-    price: '价格咨询客服',
-    perks: ['英国本土运营商', '欧洲多国漫游', '免费领取'],
+    price: '保号规则：充值10NZD(38元)延长12个月',
+    perks: ['稳定接收验证码，注册ChatGPT、TG、X、Google等', '全球漫游，新保号神卡，可转Esim', '即插即用：已在新西兰激活，免实名'],
   },
   {
     id: 'hahasim',
@@ -1749,20 +1757,51 @@ const sims = [
     iconColor: 'text-cyan-600',
     btnColor: 'bg-cyan-500 hover:bg-cyan-600',
     link: 'https://87.simpanda.cc/products/HahaSim',
-    price: '价格咨询客服',
-    perks: ['香港本地号码', '内地可收短信', '注册港美股'],
+    price: '保号规则：充值10HKD(8元)延长12个月',
+    perks: ['852香港本地号码，保号成本低', '支持内地漫游，免费收短信', '注册香港及海外银行/券商，Wechat/AliPay'],
+    cons: ['接打电话贵，8hkd/分钟', '可能遇到循环号码，垃圾电话多'],
   },
   {
-    id: 'lucky2',
-    name: 'Lucky2',
-    tag: '性价比 · 流量多',
+    id: 'giffgaff',
+    name: 'giffgaff',
+    tag: '英国老牌 · 欧洲漫游',
+    icon: 'images/icon-giffgaff.webp',
+    iconBg: 'bg-gray-800',
+    iconColor: 'text-white',
+    btnColor: 'bg-gray-900 hover:bg-black',
+    link: 'https://87.simpanda.cc/products/Giffgaff',
+    price: '有封号历史，购卡成本低',
+    perks: ['英国本土运营商', '欧洲多国漫游', '保号成本低，0.3英镑/年'],
+  },
+];
+
+// ============================================================
+// SIM卡数据 - 境外流量卡
+// ============================================================
+const simsData = [
+  {
+    id: 'lucky2-40g',
+    name: 'Lucky2 40G',
+    tag: '性价比 · <strong>不限量</strong>',
     icon: 'images/icon-lucky2.webp',
     iconBg: 'bg-lime-50',
     iconColor: 'text-lime-600',
     btnColor: 'bg-lime-500 hover:bg-lime-600',
+    link: 'https://87.simpanda.cc/products/Lucky2Sim',
+    price: '40G用完后，可继续用，限速512K',
+    perks: ['40G境外流量，代替VPN，安全合规', '不限量，性价比高', '365天有效期，到期可续费'],
+  },
+  {
+    id: 'lucky2-80g',
+    name: 'Lucky2 80G',
+    tag: '超大流量 · 更划算',
+    icon: 'images/icon-lucky280.webp',
+    iconBg: 'bg-amber-400',
+    iconColor: 'text-white',
+    btnColor: 'bg-amber-500 hover:bg-amber-600',
     link: 'https://87.simpanda.cc/products/Lucky2Sim80',
-    price: '价格咨询客服',
-    perks: ['高性价比套餐', '大流量包', '长期有效'],
+    price: '80G用完后，无法继续使用',
+    perks: ['80G境外大流量，代替VPN，安全合规', '2.5元/GB 更划算', '365天有效期，到期可续费'],
   },
 ];
 
@@ -1832,8 +1871,10 @@ document.getElementById('grid-usbank').innerHTML =
   banks.filter(b => b.category === 'usbank').map(b => renderCard(b, true)).join('');
 document.getElementById('grid-vpn').innerHTML =
   vpns.map(v => renderCard(v)).join('');
-document.getElementById('grid-sim').innerHTML =
-  sims.map(s => renderCard(s)).join('');
+document.getElementById('grid-sim-verify').innerHTML =
+  simsVerify.map(s => renderCard(s)).join('');
+document.getElementById('grid-sim-data').innerHTML =
+  simsData.map(s => renderCard(s)).join('');
 document.getElementById('grid-crypto').innerHTML =
   cryptos.map(c => renderCard(c)).join('');
 
@@ -1858,7 +1899,7 @@ function showDetail(id, isBank) {
   if (vpnItem) { showVpnDetail(vpnItem); return; }
   const cryptoItem = cryptos.find(c => c.id === id);
   if (cryptoItem) { showCryptoDetail(cryptoItem); return; }
-  const simItem = sims.find(s => s.id === id);
+  const simItem = simsVerify.find(s => s.id === id) || simsData.find(s => s.id === id);
   if (simItem) { showSimDetail(simItem); return; }
   const item = isBank ? banks.find(b => b.id === id) : brokers.find(b => b.id === id);
   if (!item) return;
@@ -2194,6 +2235,17 @@ function showSimDetail(item) {
     `<span class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-xl">✅ ${p}</span>`
   ).join('');
 
+  // SIM卡缺点（如有）- 淡蓝色渲染
+  const simConsSection = document.getElementById('d-sim-cons');
+  if (item.cons && Array.isArray(item.cons) && item.cons.length > 0) {
+    simConsSection.style.display = 'block';
+    document.getElementById('d-sim-cons-content').innerHTML = item.cons.map(c =>
+      `<div class="flex gap-2 mb-1"><span class="text-blue-600 flex-shrink-0">•</span><span class="text-gray-800">${c}</span></div>`
+    ).join('');
+  } else {
+    simConsSection.style.display = 'none';
+  }
+
   document.getElementById('d-tutorial-section').style.display = 'none';
 
   const linkEl = document.getElementById('d-link');
@@ -2239,6 +2291,9 @@ function showCryptoDetail(item) {
   perksEl.innerHTML = item.perks.map(p =>
     `<span class="inline-flex items-center gap-1.5 bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-xl">✅ ${p}</span>`
   ).join('');
+
+  // 隐藏SIM卡缺点（加密货币没有缺点字段）
+  document.getElementById('d-sim-cons').style.display = 'none';
 
   document.getElementById('d-tutorial-section').style.display = 'none';
 
@@ -2359,7 +2414,7 @@ window.addEventListener('load', () => {
     const bank = banks.find(b => b.id === hash);
     const vpn = vpns.find(v => v.id === hash);
     const crypto = cryptos.find(c => c.id === hash);
-    const sim = sims.find(s => s.id === hash);
+    const sim = simsVerify.find(s => s.id === hash) || simsData.find(s => s.id === hash);
     if (broker) showDetail(hash, false);
     else if (bank) showDetail(hash, true);
     else if (vpn) showVpnDetail(vpn);
