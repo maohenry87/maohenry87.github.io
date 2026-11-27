@@ -724,6 +724,12 @@
     <div id="d-poster" class="rounded-2xl overflow-hidden w-full"></div>
   </div>
 
+  <!-- 券商开户条件（如有） -->
+  <div id="d-broker-conditions" style="display:none;" class="mb-6">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📋 开户条件</h3>
+    <div id="d-broker-conditions-content" class="bg-red-50 border border-red-200 rounded-2xl p-5 text-sm text-gray-800 leading-relaxed"></div>
+  </div>
+
   <!-- 邀请码（有邀请码时显示） -->
   <div id="d-code-section" class="mb-6">
     <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎟 邀请码</h3>
@@ -880,6 +886,33 @@
 const brokers = [
   // ---------- 内地身份 ----------
   {
+    id: 'ibkr-mainland',
+    group: 'mainland',
+    name: '盈透证券 IBKR',
+    tag: '全球最大互联网券商 · 境外投资必开',
+    icon: 'images/icon-ibkr.webp',
+    iconBg: 'bg-red-50',
+    iconColor: 'text-red-700',
+    btnColor: 'bg-red-700 hover:bg-red-800',
+    link: 'https://ibkr.com/referral/zhongqiang110',
+    code: '',
+    poster: '',
+    perks: [
+      '支持港卡FPS/EDDA，CNY/HKD快速免费入金',
+      '支持绑定WISE/美卡ACH，USD免费入金',
+      '支持CNY/HKD/USD出金，每月前两笔免费',
+      '换汇实时汇率，可交易全球市场',
+      '美国手续费最低0.35刀/笔',
+    ],
+    conditions: '开户要求(本渠道)\n年龄大于22周岁\n港澳通行证或护照\n有香港银行账户或其他海外银行\n最低入金5000美元或者等值港币',
+    tutorial: [
+      '① 添加微信获取"开户证明"（需付费，不成功退款）',
+      '② 按照开户指引完成开户申请',
+      '③ 提交开户申请，等待审核（1-3 个工作日）',
+      '④ 审核通过后入金，即可享受本月开户奖励（入金 1 万 HKD 起）',
+    ],
+  },
+  {
     id: 'fuxing',
     group: 'mainland',
     name: '复星证券',
@@ -888,8 +921,8 @@ const brokers = [
     iconBg: 'bg-orange-50',
     iconColor: 'text-orange-600',
     btnColor: 'bg-orange-500 hover:bg-orange-600',
-    link: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=030002&aeCode=B2&invitationCode=2N2K5K&langType=zhCn',
-    code: '2N2K5K',
+    link: 'https://h5.fotechwealth.com/pages/startAccount.html?channel=030003&aeCode=B2&invitationCode=5XGWEC&langType=zhCn',
+    code: '5XGWEC',
     poster: 'images/fuxing-poster.webp',
     perks: ['入金一万，终生免佣'],
     tutorial: [
@@ -911,8 +944,8 @@ const brokers = [
     iconBg: 'bg-amber-50',
     iconColor: 'text-amber-600',
     btnColor: 'bg-amber-500 hover:bg-amber-600',
-    link: 'https://gigamoney.activity.wbrks.com/pages/winner/10849/index.html?app_id=winner&org_id=1&account_channel=hk_winner&lang=zh-HK&channel=kol&invite-code=XDHZMDTG',
-    code: 'XDHZMDTG',
+    link: 'https://gigamoney.app.wbrks.com/session/login?app_id=winner&org_id=1&account_channel=hk_winner&channel=kol&invite-code=XDZA86LT',
+    code: 'XDZA86LT',
     poster: 'images/giga-poster.webp',
     tutorial: [
       '① 点击下方「立即开户」按钮，跳转官方开户界面',
@@ -922,7 +955,7 @@ const brokers = [
       '⑤ 提交开户申请，等待审核（1-3 个工作日）',
       '⑥ 审核通过后入金，即可享受本月开户奖励',
       '⚠️ 开户提交后再下载 APP，不要提前下载',
-      '📱 安卓用户：复制链接到浏览器打开下载安装 → https://static.lbkrs.com/app/hkwinner-online-release_4.71.0_2026-04-27.apk',
+      '📱 安卓用户：复制链接到浏览器打开下载安装或Google play搜索「GigaMoney」下载 → https://static.lbkrs.com/app/hkwinner-online-release_4.71.0_2026-04-27.apk',
       '📱 苹果用户：App Store 搜索「GigaMoney」下载',
     ],
   },
@@ -958,8 +991,8 @@ const brokers = [
     iconBg: 'bg-indigo-50',
     iconColor: 'text-indigo-700',
     btnColor: 'bg-indigo-700 hover:bg-indigo-800',
-    link: 'https://ca.chiefgroup.com.hk/hk/open/start?PromoCode=MA7367',
-    code: 'MA7367',
+    link: 'https://www.chiefgroup.com.hk/hk/open?rl=ECR&PromoCode=QJ7665',
+    code: 'QJ7665',
     poster: 'images/zhifu-poster.webp',
     tutorial: [
       '⚠️ 开户需要 VPN 翻墙，节点选香港，全局模式',
@@ -973,28 +1006,6 @@ const brokers = [
     ],
   },
   {
-    id: 'yingli-sg',
-    group: 'mainland',
-    name: '盈立证券（新加坡）',
-    tag: '新加坡持牌 · 可交易加密货币ETF · 尝试VPN开户',
-    icon: 'images/icon-yinglisg.webp',
-    iconBg: 'bg-blue-50',
-    iconColor: 'text-blue-500',
-    btnColor: 'bg-blue-500 hover:bg-blue-600',
-    link: 'https://m.usmartsg66.com/promo/overseas/bonus-dec.html?ICode=csrw&langType=1&Id=',
-    code: 'csrw',
-    poster: 'images/yinglisg-poster.webp',
-    tutorial: [
-      '① 点击下方「立即开户」按钮，跳转官方开户界面',
-      '② 完成手机号注册',
-      '③ 添加微信获取"开户证明"',
-      '④ 按照开户指引完成开户申请',
-      '⑤ 提交开户申请，等待审核（1-3 个工作日）',
-      '⑥ 审核通过后入金，即可享受本月开户奖励（入金 1 万 HKD 起）',
-      '⑦ 入金满 5 万 HKD，可获得额外丰厚奖励',
-    ],
-  },
-  {
     id: 'bit',
     group: 'mainland',
     name: 'BIT',
@@ -1003,8 +1014,8 @@ const brokers = [
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-600',
     btnColor: 'bg-blue-600 hover:bg-blue-700',
-    link: 'https://bit.bshareweb.com/newRegister/cn?invite_code=XIAOMI',
-    code: 'XIAOMI',
+    link: 'https://bit.bshareweb.com/newRegister/cn?invite_code=3EJXZE',
+    code: '3EJXZE',
     poster: ['images/bit-poster-1.webp', 'images/bit-poster-2.webp'],
     perks: [
       '终身0佣金，平台费仅 $0.005/股',
@@ -1045,8 +1056,8 @@ const brokers = [
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-500',
     btnColor: 'bg-blue-500 hover:bg-blue-600',
-    link: 'https://www.bbae.com/',
-    code: '',
+    link: 'https://landing.bbae.com/m/h5/new-user-reward-v4?lang=zh-CN&f=invite&referral=ste2ui72x',
+    code: 'ste2ui72x',
     poster: '',
     articleLink: 'https://jm5p1e842p.feishu.cn/wiki/KhbrwdmZAi9Z1lk9Hl0cMwRpnEb?from=from_copylink',
     tutorial: [
@@ -1062,7 +1073,7 @@ const brokers = [
     id: 'ibkr',
     group: 'overseas',
     name: '盈透证券 IBKR',
-    tag: '全球最大互联网券商 · 美股最便宜',
+    tag: '全球最大互联网券商 · 境外投资必开',
     icon: 'images/icon-ibkr.webp',
     iconBg: 'bg-red-50',
     iconColor: 'text-red-700',
@@ -1155,8 +1166,8 @@ const brokers = [
     iconBg: 'bg-amber-50',
     iconColor: '',
     btnColor: 'bg-amber-500 hover:bg-amber-600',
-    link: 'https://tigr.link/9AtXAY',
-    code: 'TIGERDZQ',
+    link: 'https://www.tigersecurities.com/signup?source=inner&invite=yury3288',
+    code: 'yury3288',
     statusNote: '老虎证券仅限海外身份（香港/新加坡等境外证件）开户，大陆身份不可开。当前暂停入金，恢复后入金留存 60 天可领奖励。',
     poster: '',
     tutorial: [
@@ -1220,8 +1231,8 @@ const brokers = [
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-600',
     btnColor: 'bg-blue-600 hover:bg-blue-700',
-    link: 'https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPXSCZ9V',
-    code: 'LPXSCZ9V',
+    link: 'https://render.alipay.com/p/c/180020570000149153/index.html?invite-code=LPWHFSK6',
+    code: 'LPWHFSK6',
     poster: 'images/mayi-poster.webp',
     guideImage: 'images/mayi-guide.webp',
     perks: [
@@ -1240,6 +1251,28 @@ const brokers = [
     ],
   },
   {
+    id: 'tiger-hk',
+    group: 'hk-broker',
+    name: '老虎证券',
+    tag: 'Tiger Brokers · 小米背景 · 美股打新',
+    icon: 'images/icon-tiger.webp',
+    iconBg: 'bg-amber-50',
+    iconColor: '',
+    btnColor: 'bg-amber-500 hover:bg-amber-600',
+    link: 'https://www.tigersecurities.com/signup?source=inner&invite=yury3288',
+    code: 'yury3288',
+    statusNote: '老虎证券仅限海外身份（香港/新加坡等境外证件）开户，大陆身份不可开。当前暂停入金，恢复后入金留存 60 天可领奖励。',
+    poster: '',
+    tutorial: [
+      '① 点击下方「立即开户」按钮，跳转官方开户界面',
+      '② 完成手机号注册',
+      '③ 添加微信获取"开户证明"',
+      '④ 按照开户指引完成开户申请',
+      '⑤ 提交开户申请，等待审核（1-3 个工作日）',
+      '⑥ 审核通过后入金，即可享受本月开户奖励（入金 1 万 HKD 起）',
+    ],
+  },
+  {
     id: 'yingli-hk',
     group: 'mainland',
     name: '盈立证券（香港）',
@@ -1248,10 +1281,34 @@ const brokers = [
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-600',
     btnColor: 'bg-blue-600 hover:bg-blue-700',
-    link: 'https://hk.usmartbroker.com/u/1-0200t0sn2I',
-    code: 'v8q39',
+    link: 'https://hk.usmartbroker.com/u/1-0200B0pj2v',
+    code: 'vfjvn',
     poster: 'images/yinglihk-poster.webp',
     tutorial: [
+      '⚠️ 开户需要 VPN 翻墙，节点选香港，全局模式',
+      '① 点击下方「立即开户」按钮，跳转官方开户界面',
+      '② 完成手机号注册',
+      '③ 添加微信获取"开户证明"',
+      '④ 按照开户指引完成开户申请',
+      '⑤ 提交开户申请，等待审核（1-3 个工作日）',
+      '⑥ 审核通过后入金，即可享受本月开户奖励（入金 1 万 HKD 起）',
+      '⑦ 入金满 5 万 HKD，可获得额外丰厚奖励',
+    ],
+  },
+  {
+    id: 'yingli-sg',
+    group: 'mainland',
+    name: '盈立证券（新加坡）',
+    tag: '新加坡持牌 · 可交易加密货币ETF · 尝试VPN开户',
+    icon: 'images/icon-yinglisg.webp',
+    iconBg: 'bg-blue-50',
+    iconColor: 'text-blue-500',
+    btnColor: 'bg-blue-500 hover:bg-blue-600',
+    link: 'https://m.usmartsg66.com/promo/overseas/bonus.html?ICode=2e8g&langType=1&Id=',
+    code: '2e8g',
+    poster: 'images/yinglisg-poster.webp',
+    tutorial: [
+      '⚠️ 开户需要 VPN 翻墙，节点选香港或新加坡，全局模式',
       '① 点击下方「立即开户」按钮，跳转官方开户界面',
       '② 完成手机号注册',
       '③ 添加微信获取"开户证明"',
@@ -1434,7 +1491,8 @@ const banks = [
     iconBg: 'bg-teal-50',
     iconColor: 'text-teal-600',
     btnColor: 'bg-teal-600 hover:bg-teal-700',
-    link: 'https://www.ifastgb.com/tellafriend/zhongqiangd3568',
+    link: 'https://www.ifastgb.com/tellafriend/xueleiw3867',
+    code: 'JMDYUVNLU5',
     desc: 'iFAST Global Bank 是一家总部位于英国的数字银行，受英国 FCA 监管，提供英镑、美元、欧元等多币种账户。开户全程线上完成，无需出境，支持向港美股券商入金，是跨境资金管理的实用工具。',
     articleLink: 'https://jm5p1e842p.feishu.cn/docx/TyPTdElshokgWvxHgGOcDGd2nhg?from=from_copylink',
   },
@@ -1447,7 +1505,7 @@ const banks = [
     iconBg: 'bg-green-50',
     iconColor: 'text-green-600',
     btnColor: 'bg-green-500 hover:bg-green-600',
-    link: 'https://wise.com/invite/ihpc/zhongqiangd',
+    link: 'https://wise.com/invite/ahpc/xueleiw1',
     desc: 'Wise（原 TransferWise）是全球领先的跨境汇款和多币种账户平台，支持 50+ 种货币，汇率透明、手续费极低。开户后可获得多国银行账号（美元、英镑、欧元等），方便接收海外资金、给券商入金、以及日常跨境消费。',
     articleLink: 'https://jm5p1e842p.feishu.cn/docx/BV6EdJRcKoQSpGxaxO0cMifXnTw?from=from_copylink',
   },
@@ -1859,6 +1917,26 @@ function showDetail(id, isBank) {
     posterSection.style.display = 'none';
   }
 
+  // 券商开户条件（如有）
+  const brokerConditionsSection = document.getElementById('d-broker-conditions');
+  if (!isBank && item.conditions) {
+    brokerConditionsSection.style.display = 'block';
+    const conditionsLines = item.conditions.split('\n');
+    let html = '';
+    conditionsLines.forEach((line, index) => {
+      if (index === 0 && line.includes('开户要求')) {
+        // 第一行 "开户要求" 特殊渲染：红色加粗
+        html += `<div class="text-red-400 font-bold mb-2 pb-2 border-b border-red-700/50">${line}</div>`;
+      } else {
+        // 其他行加序号
+        html += `<div class="text-gray-300 mb-1">${index}. ${line}</div>`;
+      }
+    });
+    document.getElementById('d-broker-conditions-content').innerHTML = html;
+  } else {
+    brokerConditionsSection.style.display = 'none';
+  }
+
   // 邀请码
   const codeSection = document.getElementById('d-code-section');
   if (item.code) {
@@ -2004,10 +2082,10 @@ function showDetail(id, isBank) {
   }
 
   // 按钮：券商 + 线上银行显示，赴港/见证银行（无 link）隐藏
-  // 华美银行不显示立即开户按钮
+  // 华美银行和盈透证券内地版不显示立即开户按钮
   const linkEl = document.getElementById('d-link');
   const linkTopEl = document.getElementById('d-link-top');
-  if (item.link && item.id !== 'huamei') {
+  if (item.link && !['huamei', 'ibkr-mainland'].includes(item.id)) {
     const btnText = (isBank && item.category === 'online') ? '立即申请 →' : '立即开户 →';
     const btnClass = `block text-center text-white font-bold py-4 rounded-2xl text-base transition-colors ${item.btnColor}`;
     linkEl.href = item.link;
