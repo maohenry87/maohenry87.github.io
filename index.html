@@ -905,13 +905,13 @@
   </div>
 
   <!-- 推广图片（有推广图时显示） -->
-  <div id="d-promo-section" style="display:none;" class="mb-6 flex justify-center">
-    <img id="d-promo-img" src="" class="w-[80%] rounded-2xl" alt="推广图片">
+  <div id="d-promo-section" style="display:none;" class="mb-6 px-[10%]">
+    <img id="d-promo-img" src="" class="w-full rounded-2xl" alt="推广图片">
   </div>
 
   <!-- 邀请码（有邀请码时显示） -->
-  <div id="d-code-section" style="display:none;" class="mb-6">
-    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎟 邀请码</h3>
+  <div id="d-code-section" style="display:none;" class="mb-6 px-[10%]">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3 text-center">🎟 邀请码</h3>
     <div class="bg-gray-900 rounded-xl px-4 py-3 flex items-center justify-between border border-gray-700">
       <span id="d-code" class="font-mono font-bold text-xl text-white tracking-widest"></span>
       <button id="copy-btn" onclick="copyCode()" class="bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors">
@@ -1570,6 +1570,7 @@ const banks = [
     link: 'https://s.pandaremit.com/1uieqX',
     code: 'VRU3SG',
     promoImage: 'images/xiongmaosuhuituiguang.webp',
+    promoPadding: '5%',
     desc: '熊猫速汇是一家专注于跨境汇款的金融科技公司，提供便捷的人民币跨境汇款服务，汇率优惠，到账速度快，支持多种汇款渠道。\n\n境内资金出境：目前仅支持留学学费\n境外资金回国：首次汇款免手续费，后续6500元以上免手续费\n优势：不占用外汇额度',
   },
   {
@@ -2056,6 +2057,10 @@ function showDetail(id, isBank) {
   if (item.promoImage) {
     promoSection.style.display = 'block';
     document.getElementById('d-promo-img').src = item.promoImage;
+    // 自定义内边距（熊猫速汇放大10%）
+    const padding = item.promoPadding || '10%';
+    promoSection.style.paddingLeft = padding;
+    promoSection.style.paddingRight = padding;
   } else {
     promoSection.style.display = 'none';
   }
