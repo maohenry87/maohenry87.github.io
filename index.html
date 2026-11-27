@@ -740,7 +740,7 @@
 
   <!-- 本月奖励海报（仅券商） -->
   <div id="d-poster-section" class="mb-6">
-    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎁 本月奖励海报</h3>
+    <h3 id="d-poster-title" class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎁 本月奖励海报</h3>
     <div id="d-poster" class="rounded-2xl overflow-hidden w-full"></div>
   </div>
 
@@ -785,6 +785,13 @@
     <div>
       <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">✅ 优点</h3>
       <div id="d-pros" class="bg-green-900/20 border border-green-800/50 rounded-2xl p-5 space-y-2 text-sm text-gray-300 leading-relaxed"></div>
+    </div>
+    <!-- 华美银行专属：资金转移路径图片（在优点下面） -->
+    <div id="d-huamei-transfer" style="display:none;">
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">💰 资金转移路径</h3>
+      <div class="rounded-2xl overflow-hidden">
+        <img src="images/transfer.webp" class="w-full rounded-2xl" alt="华美银行资金转移路径">
+      </div>
     </div>
     <div>
       <h3 id="d-cons-label" class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">⚠️ 缺点</h3>
@@ -834,17 +841,28 @@
   <div id="d-pubaccount-section" style="display:none;" class="mb-6">
     <!-- 银行简介 -->
     <p id="d-bank-desc" class="text-sm text-gray-400 leading-relaxed mb-5"></p>
-    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📖 开户教程</h3>
-    <div class="bg-gray-900 border border-gray-700 rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4">
-      <img src="images/qr-official.webp" class="w-28 h-28 rounded-xl object-cover flex-shrink-0" alt="公众号二维码">
-      <div class="flex flex-col gap-3">
-        <div>
-          <div class="font-semibold text-white mb-1">「华尔街财富通」公众号图文教程</div>
-          <div class="text-sm text-gray-400">点击下方按钮查看详细开户步骤，或扫描左侧二维码关注公众号</div>
+    <!-- 仅非Wise/iFAST显示公众号区块 -->
+    <div id="d-pubaccount-qr" style="display:none;">
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📖 开户教程</h3>
+      <div class="bg-gray-900 border border-gray-700 rounded-2xl p-5 flex flex-col sm:flex-row items-center gap-4">
+        <img src="images/qr-official.webp" class="w-28 h-28 rounded-xl object-cover flex-shrink-0" alt="公众号二维码">
+        <div class="flex flex-col gap-3">
+          <div>
+            <div class="font-semibold text-white mb-1">「华尔街财富通」公众号图文教程</div>
+            <div class="text-sm text-gray-400">点击下方按钮查看详细开户步骤，或扫描左侧二维码关注公众号</div>
+          </div>
         </div>
-        <div id="d-article-links" class="flex flex-wrap gap-2"></div>
-        <span id="d-article-placeholder" class="text-xs text-gray-400" style="display:none;">教程链接待更新，请关注公众号查看</span>
       </div>
+    </div>
+    <!-- 查看教程按钮（Wise/iFAST显示） -->
+    <div id="d-article-links-section">
+      <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📖 开户教程</h3>
+      <!-- Wise专属：transfer图片 -->
+      <div id="d-wise-transfer-img" style="display:none;" class="mb-4">
+        <img src="images/transfer.webp" class="w-full rounded-2xl" alt="Wise转账教程">
+      </div>
+      <div id="d-article-links" class="flex flex-wrap gap-2"></div>
+      <span id="d-article-placeholder" class="text-xs text-gray-400" style="display:none;">教程链接待更新，请关注公众号查看</span>
     </div>
   </div>
 
@@ -945,7 +963,7 @@ const brokers = [
     btnColor: 'bg-red-700 hover:bg-red-800',
     link: 'https://ibkr.com/referral/zhongqiang110',
     code: '',
-    poster: '',
+    poster: 'images/transfer.webp',
     perks: [
       '支持港卡FPS/EDDA，CNY/HKD快速免费入金',
       '支持绑定WISE/美卡ACH，USD免费入金',
@@ -1129,7 +1147,7 @@ const brokers = [
     btnColor: 'bg-red-700 hover:bg-red-800',
     link: 'https://ibkr.com/referral/zhongqiang110',
     code: '',
-    poster: '',
+    poster: 'images/transfer.webp',
     tutorial: [
       '⚠️ 开户需要海外地址证明',
       '① 点击下方「立即开户」按钮，跳转官方开户界面',
@@ -1556,7 +1574,7 @@ const banks = [
     link: 'https://www.ifastgb.com/tellafriend/xueleiw3867',
     code: 'JMDYUVNLU5',
     desc: 'iFAST Global Bank 是一家总部位于英国的数字银行，受英国 FCA 监管，提供英镑、美元、欧元等多币种账户。开户全程线上完成，无需出境，支持向港美股券商入金，是跨境资金管理的实用工具。',
-    articleLink: 'https://jm5p1e842p.feishu.cn/docx/TyPTdElshokgWvxHgGOcDGd2nhg?from=from_copylink',
+    articleLink: 'https://dabaiketang.com/ifast-bank-account-opening-guide/',
   },
   {
     id: 'pandaremit',
@@ -2017,15 +2035,20 @@ function showDetail(id, isBank) {
   // 海报（仅券商）
   const posterSection = document.getElementById('d-poster-section');
   const posterEl = document.getElementById('d-poster');
+  const posterTitle = document.getElementById('d-poster-title');
   if (!isBank) {
     posterSection.style.display = 'block';
+    // 盈透证券改为"资金转移路径"
+    if (posterTitle) {
+      posterTitle.textContent = ['ibkr', 'ibkr-mainland'].includes(item.id) ? '💰 资金转移路径' : '🎁 本月奖励海报';
+    }
     if (item.poster) {
       const posters = Array.isArray(item.poster) ? item.poster : [item.poster];
-      posterEl.innerHTML = posters.map(p => `<img src="${p}" class="w-full rounded-2xl mb-3" alt="${item.name}本月奖励海报">`).join('');
+      posterEl.innerHTML = posters.map(p => `<img src="${p}" class="w-full rounded-2xl mb-3" alt="${item.name}资金转移路径">`).join('');
     } else {
       posterEl.innerHTML = `<div class="poster-placeholder rounded-2xl flex flex-col items-center justify-center py-16 gap-3">
         <svg class="w-10 h-10 opacity-20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        <span class="text-sm opacity-30">本月奖励海报（待上传）</span>
+        <span class="text-sm opacity-30">${['ibkr', 'ibkr-mainland'].includes(item.id) ? '资金转移路径' : '本月奖励海报'}（待上传）</span>
       </div>`;
     }
   } else {
@@ -2082,7 +2105,9 @@ function showDetail(id, isBank) {
     bankInfoEl.style.display = 'block';
     document.getElementById('d-pros').innerHTML =
       item.pros.map(p => `<div class="flex gap-2"><span class="text-green-500 flex-shrink-0">•</span><span>${p}</span></div>`).join('');
-    // 华美银行显示团办渠道
+    // 华美银行显示资金转移路径和团办渠道
+    const huameiTransferSection = document.getElementById('d-huamei-transfer');
+    if (huameiTransferSection) huameiTransferSection.style.display = item.id === 'huamei' ? 'block' : 'none';
     if (item.id === 'huamei') {
       document.getElementById('d-cons-label').textContent = '🔥 团办渠道';
       document.getElementById('d-cons').innerHTML = `<div class="text-black font-bold mb-2">🔥华美银行Henry哥特价团办🔥</div><div class="mb-2">境外银行开户政策变动较快，请合理规划办理时机，且办且珍惜</div><div>• Value Checking(标准账户)：管理费12刀/月，1500刀日均余额豁免；</div><div>• Premier Checking(高级账户)：管理费20刀/月，2500刀日均余额豁免；</div>`;
@@ -2156,11 +2181,20 @@ function showDetail(id, isBank) {
   const pubaccountSection = document.getElementById('d-pubaccount-section');
   const articleLinksEl = document.getElementById('d-article-links');
   const articlePlaceholder = document.getElementById('d-article-placeholder');
+  const qrSection = document.getElementById('d-pubaccount-qr');
+  const linksSection = document.getElementById('d-article-links-section');
   if ((isBank && item.category === 'hk') || (isBank && item.category === 'online' && hasArticle) || (!isBank && hasArticle)) {
     pubaccountSection.style.display = 'block';
     const descEl = document.getElementById('d-bank-desc');
     descEl.textContent = item.desc || '';
     descEl.style.display = item.desc ? 'block' : 'none';
+    // Wise和iFAST删除公众号区块，只显示教程按钮
+    const isSimpleMode = ['wise', 'ifast'].includes(item.id);
+    if (qrSection) qrSection.style.display = isSimpleMode ? 'none' : 'block';
+    if (linksSection) linksSection.style.display = 'block';
+    // Wise显示transfer图片
+    const wiseTransferImg = document.getElementById('d-wise-transfer-img');
+    if (wiseTransferImg) wiseTransferImg.style.display = item.id === 'wise' ? 'block' : 'none';
     const links = item.articleLinks || (item.articleLink ? [item.articleLink] : []);
     articleLinksEl.innerHTML = '';
     if (links.length > 0) {
