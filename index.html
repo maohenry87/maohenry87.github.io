@@ -557,7 +557,7 @@
       </div>
 
       <!-- 赴港办卡 -->
-      <div>
+      <div style="display:none;">
         <div class="mb-4">
           <h3 class="text-base font-bold text-emerald-300 tracking-tight mb-1">🇭🇰 赴港办卡</h3>
           <p class="text-sm text-gray-400 mb-0.5">连接香港 WiFi，全程线上开户，无需线下</p>
@@ -726,9 +726,9 @@
     </div>
   </div>
 
-  <!-- 开户优点（有数据时显示，券商专属） -->
+  <!-- 开卡优点（有数据时显示，券商/SIM卡专属） -->
   <div id="d-perks-section" style="display:none;" class="mb-6">
-    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">✅ 开户优点</h3>
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">✅ 开卡优点</h3>
     <div id="d-perks" class="flex flex-col gap-2"></div>
   </div>
 
@@ -750,15 +750,10 @@
     <div id="d-broker-conditions-content" class="bg-red-50 border border-red-200 rounded-2xl p-5 text-sm text-gray-800 leading-relaxed"></div>
   </div>
 
-  <!-- 邀请码（有邀请码时显示） -->
-  <div id="d-code-section" class="mb-6">
-    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎟 邀请码</h3>
-    <div class="bg-gray-900 rounded-xl px-4 py-3 flex items-center justify-between border border-gray-700">
-      <span id="d-code" class="font-mono font-bold text-xl text-white tracking-widest"></span>
-      <button id="copy-btn" onclick="copyCode()" class="bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors">
-        复制
-      </button>
-    </div>
+  <!-- 银行简介（线上银行有描述时显示） -->
+  <div id="d-desc-section" style="display:none;" class="mb-6">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">📖 产品介绍</h3>
+    <p id="d-desc-content" class="text-sm text-gray-300 leading-relaxed bg-gray-900 border border-gray-700 rounded-2xl p-5"></p>
   </div>
 
   <!-- ★ 开户按钮（顶部，券商专属）— 看完优点/海报立即行动 -->
@@ -888,6 +883,22 @@
           <div class="text-xs text-gray-400">长按或扫描二维码添加微信</div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- 推广图片（有推广图时显示） -->
+  <div id="d-promo-section" style="display:none;" class="mb-6 flex justify-center">
+    <img id="d-promo-img" src="" class="w-[80%] rounded-2xl" alt="推广图片">
+  </div>
+
+  <!-- 邀请码（有邀请码时显示） -->
+  <div id="d-code-section" style="display:none;" class="mb-6">
+    <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">🎟 邀请码</h3>
+    <div class="bg-gray-900 rounded-xl px-4 py-3 flex items-center justify-between border border-gray-700">
+      <span id="d-code" class="font-mono font-bold text-xl text-white tracking-widest"></span>
+      <button id="copy-btn" onclick="copyCode()" class="bg-gray-700 hover:bg-gray-600 text-gray-200 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors">
+        复制
+      </button>
     </div>
   </div>
 
@@ -1319,7 +1330,7 @@ const brokers = [
     id: 'yingli-sg',
     group: 'mainland',
     name: '盈立证券（新加坡）',
-    tag: '新加坡持牌 · 可交易加密货币ETF · 尝试VPN开户',
+    tag: '新加坡持牌 · 可交易加密货币ETF',
     icon: 'images/icon-yinglisg.webp',
     iconBg: 'bg-blue-50',
     iconColor: 'text-blue-500',
@@ -1503,6 +1514,19 @@ const banks = [
 
   // ---------- 线上办理 ----------
   {
+    id: 'wise',
+    category: 'online',
+    name: 'Wise',
+    tag: '全球多币种账户 · 低手续费跨境转账',
+    icon: 'images/icon-wise.webp',
+    iconBg: 'bg-green-50',
+    iconColor: 'text-green-600',
+    btnColor: 'bg-green-500 hover:bg-green-600',
+    link: 'https://wise.com/invite/ahpc/xueleiw1',
+    desc: 'Wise（原 TransferWise）是全球领先的跨境汇款和多币种账户平台，支持 50+ 种货币，汇率透明、手续费极低。开户后可获得多国银行账号（美元、英镑、欧元等），方便接收海外资金、给券商入金、以及日常跨境消费。',
+    articleLink: 'https://jm5p1e842p.feishu.cn/docx/BV6EdJRcKoQSpGxaxO0cMifXnTw?from=from_copylink',
+  },
+  {
     id: 'ifast',
     category: 'online',
     name: 'iFAST Global Bank',
@@ -1517,17 +1541,32 @@ const banks = [
     articleLink: 'https://jm5p1e842p.feishu.cn/docx/TyPTdElshokgWvxHgGOcDGd2nhg?from=from_copylink',
   },
   {
-    id: 'wise',
+    id: 'pandaremit',
     category: 'online',
-    name: 'Wise',
-    tag: '全球多币种账户 · 低手续费跨境转账',
-    icon: 'images/icon-wise.webp',
-    iconBg: 'bg-green-50',
-    iconColor: 'text-green-600',
-    btnColor: 'bg-green-500 hover:bg-green-600',
-    link: 'https://wise.com/invite/ahpc/xueleiw1',
-    desc: 'Wise（原 TransferWise）是全球领先的跨境汇款和多币种账户平台，支持 50+ 种货币，汇率透明、手续费极低。开户后可获得多国银行账号（美元、英镑、欧元等），方便接收海外资金、给券商入金、以及日常跨境消费。',
-    articleLink: 'https://jm5p1e842p.feishu.cn/docx/BV6EdJRcKoQSpGxaxO0cMifXnTw?from=from_copylink',
+    name: '熊猫速汇',
+    tag: '跨境汇款 · 汇率优 · 到账快',
+    icon: 'images/icon-xiongmaosuhui.webp',
+    iconBg: 'bg-yellow-50',
+    iconColor: 'text-yellow-600',
+    btnColor: 'bg-yellow-500 hover:bg-yellow-600',
+    link: 'https://s.pandaremit.com/1uieqX',
+    code: 'VRU3SG',
+    promoImage: 'images/xiongmaosuhuituiguang.webp',
+    desc: '熊猫速汇是一家专注于跨境汇款的金融科技公司，提供便捷的人民币跨境汇款服务，汇率优惠，到账速度快，支持多种汇款渠道。',
+  },
+  {
+    id: 'starryblu',
+    category: 'online',
+    name: 'StarryBlu',
+    tag: '跨境汇款 · 线上开户 · 多币种账户',
+    icon: 'images/icon-starryblu.webp',
+    iconBg: 'bg-indigo-50',
+    iconColor: 'text-indigo-600',
+    btnColor: 'bg-indigo-500 hover:bg-indigo-600',
+    link: 'https://sg.starryblu.com/x/6Rms2qMy',
+    code: 'MHQK08E',
+    promoImage: 'images/starrybluka.webp',
+    desc: 'StarryBlu 是一家新兴的数字银行平台，提供跨境汇款和多币种账户服务，支持线上开户，操作便捷，适合有跨境资金管理需求的用户。',
   },
 
   // ---------- 赴港办卡 ----------
@@ -1925,7 +1964,7 @@ function showDetail(id, isBank) {
     statusSection.style.display = 'none';
   }
 
-  // 开户优点（券商专属，有 perks 字段时显示）
+  // 开卡优点（券商/SIM卡专属，有 perks 字段时显示）
   const perksSection = document.getElementById('d-perks-section');
   const perksEl = document.getElementById('d-perks');
   if (!isBank && item.perks && item.perks.length > 0) {
@@ -1978,6 +2017,15 @@ function showDetail(id, isBank) {
     brokerConditionsSection.style.display = 'none';
   }
 
+  // 推广图片
+  const promoSection = document.getElementById('d-promo-section');
+  if (item.promoImage) {
+    promoSection.style.display = 'block';
+    document.getElementById('d-promo-img').src = item.promoImage;
+  } else {
+    promoSection.style.display = 'none';
+  }
+
   // 邀请码
   const codeSection = document.getElementById('d-code-section');
   if (item.code) {
@@ -2020,12 +2068,23 @@ function showDetail(id, isBank) {
   document.getElementById('d-contact-section').style.display =
     (isBank && (item.category === 'witness' || item.category === 'usbank')) ? 'block' : 'none';
 
+  // 判断是否有文章链接
+  const hasArticle = item.articleLinks || item.articleLink;
+
+  // 线上银行：独立的产品介绍（无教程时显示）
+  const descSection = document.getElementById('d-desc-section');
+  if (isBank && item.category === 'online' && item.desc && !hasArticle) {
+    descSection.style.display = 'block';
+    document.getElementById('d-desc-content').textContent = item.desc;
+  } else {
+    descSection.style.display = 'none';
+  }
+
   // 赴港银行：简介 + 公众号教程 + 文章链接按钮
   const pubaccountSection = document.getElementById('d-pubaccount-section');
   const articleLinksEl = document.getElementById('d-article-links');
   const articlePlaceholder = document.getElementById('d-article-placeholder');
-  const hasArticle = item.articleLinks || item.articleLink;
-  if ((isBank && (item.category === 'hk' || item.category === 'online')) || (!isBank && hasArticle)) {
+  if ((isBank && item.category === 'hk') || (isBank && item.category === 'online' && hasArticle) || (!isBank && hasArticle)) {
     pubaccountSection.style.display = 'block';
     const descEl = document.getElementById('d-bank-desc');
     descEl.textContent = item.desc || '';
@@ -2170,9 +2229,11 @@ function showVpnDetail(item) {
   document.getElementById('d-cert-section').style.display = 'none';
   document.getElementById('d-poster-section').style.display = 'none';
   document.getElementById('d-code-section').style.display = 'none';
+  document.getElementById('d-promo-section').style.display = 'none';
   document.getElementById('d-bank-info').style.display = 'none';
   document.getElementById('d-contact-section').style.display = 'none';
   document.getElementById('d-pubaccount-section').style.display = 'none';
+  document.getElementById('d-desc-section').style.display = 'none';
   document.getElementById('d-download-section').style.display = 'none';
   document.getElementById('d-guide-section').style.display = 'none';
   document.getElementById('d-income-section').style.display = 'none';
@@ -2218,9 +2279,11 @@ function showSimDetail(item) {
   document.getElementById('d-cert-section').style.display = 'none';
   document.getElementById('d-poster-section').style.display = 'none';
   document.getElementById('d-code-section').style.display = 'none';
+  document.getElementById('d-promo-section').style.display = 'none';
   document.getElementById('d-bank-info').style.display = 'none';
   document.getElementById('d-contact-section').style.display = 'none';
   document.getElementById('d-pubaccount-section').style.display = 'none';
+  document.getElementById('d-desc-section').style.display = 'none';
   document.getElementById('d-download-section').style.display = 'none';
   document.getElementById('d-guide-section').style.display = 'none';
   document.getElementById('d-income-section').style.display = 'none';
@@ -2276,9 +2339,11 @@ function showCryptoDetail(item) {
   document.getElementById('d-cert-section').style.display = 'none';
   document.getElementById('d-poster-section').style.display = 'none';
   document.getElementById('d-code-section').style.display = 'none';
+  document.getElementById('d-promo-section').style.display = 'none';
   document.getElementById('d-bank-info').style.display = 'none';
   document.getElementById('d-contact-section').style.display = 'none';
   document.getElementById('d-pubaccount-section').style.display = 'none';
+  document.getElementById('d-desc-section').style.display = 'none';
   document.getElementById('d-download-section').style.display = 'none';
   document.getElementById('d-guide-section').style.display = 'none';
   document.getElementById('d-income-section').style.display = 'none';
